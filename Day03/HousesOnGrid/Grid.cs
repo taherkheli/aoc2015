@@ -21,7 +21,7 @@ namespace HousesOnGrid
 
     public List<House> VisitedHouses { get => _visitedHouses; }
 
-    public void MoveSantasBehind(Dir dir)
+    public void Move(Dir dir)
     {
       int xNew, yNew;
 
