@@ -36,7 +36,6 @@ namespace Day01
     {
       int result = 0;
       int floor = 0;
-      var directions = input.ToCharArray();
 
       for (int i = 0; i < input.Length; i++)
       {
@@ -54,8 +53,7 @@ namespace Day01
             result = i + 1;
             break;
           }
-        }
-
+        } 
       }
 
       return result;
