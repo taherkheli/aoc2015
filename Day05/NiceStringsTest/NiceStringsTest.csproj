@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Day05\NiceStrings\NiceStrings.csproj" />
+    <ProjectReference Include="..\NiceStrings\NiceStrings.csproj" />
   </ItemGroup>
 
 </Project>

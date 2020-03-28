@@ -1,4 +1,5 @@
-# AdventOfCode2015
+# aoc 2015
+
 A repo to play with AdventOfCode 2015 because 2019 (alongside JLo's pressure) got too much to handle ;) at Day 14
 
 https://adventofcode.com/
