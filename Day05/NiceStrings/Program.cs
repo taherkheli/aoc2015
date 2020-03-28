@@ -25,6 +25,21 @@ namespace NiceStrings
       }
 
       Console.WriteLine("\nPartI: Nice Strings: {0}", niceCount);
+
+      niceCount = 0;      
+
+      foreach (var s in strings)
+      {
+        if (!Utils.HasSeparatedDouble(s))
+          continue;
+
+        if (!Utils.HasTwoNonOverlappingPairs(s))
+          continue;
+
+        niceCount++;
+      }
+
+      Console.WriteLine("\nPartII: Nice Strings: {0}", niceCount);
     }
   }
 }

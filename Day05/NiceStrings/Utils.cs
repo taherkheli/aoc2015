@@ -61,12 +61,54 @@ namespace NiceStrings
 
       for (int i = 0; i < charArr.Length - 1; i++)
       {
-        for (int j = 1; j < 2; j++)
-          if (charArr[i] == charArr[i+j])
-            found = true;
-
-        if (found)
+        if (charArr[i] == charArr[i + 1]) 
+        {
+          found = true;
           break;
+        }
+      }
+
+      return found;
+    }
+    
+    public static bool HasTwoNonOverlappingPairs(string s)
+    {
+      bool found = false;
+      var charArr = s.ToCharArray();
+      int count = 0;
+
+      for (int i = 0; i < charArr.Length - 1; i++)
+      {
+        count = 1;
+
+        for (int j = i + 2; j < charArr.Length - 1; j++)
+        {       
+          if ((charArr[i] == charArr[j]) && (charArr[i + 1] == charArr[j + 1]))
+            count++;          
+        }
+
+        if (count > 1)
+        {
+          found = true;
+          break;
+        }
+      }
+
+      return found;
+    }
+
+    public static bool HasSeparatedDouble(string s)
+    {
+      bool found = false;
+      var charArr = s.ToCharArray();
+
+      for (int i = 0; i < charArr.Length - 2; i++)
+      {
+        if (charArr[i] == charArr[i + 2])
+        {
+          found = true;
+          break;
+        }
       }
 
       return found;
