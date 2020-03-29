@@ -7,9 +7,14 @@ namespace Lights
     static void Main()
     {
       string path = "input.txt";
-      var strings = Utils.Parse(path);
+      var cmds = Utils.Parse(path);
+      int size = 1000;
+      var grid = new Grid(size, size);
 
+      foreach (var cmd in cmds)
+        grid.Execute(cmd);
 
+      Console.WriteLine("\nPartI: Lit lights: {0}", grid.LitCount);      
     }
   }
 }

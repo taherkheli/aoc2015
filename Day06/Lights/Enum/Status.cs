@@ -2,7 +2,7 @@
 {
   public enum Status
   {
-    on,
+    On,
     Off,
     Unknown
   }

@@ -9,15 +9,20 @@ namespace Lights
     public static Command[] Parse(string path)
     {
       StreamReader file = new StreamReader(path);
-      var lines = file.ReadToEnd().Trim(Environment.NewLine.ToCharArray()).Split(Environment.NewLine);      
+      var lines = file.ReadToEnd().Trim(Environment.NewLine.ToCharArray()).Split(Environment.NewLine);
+
+      return Parse(lines);
+    }
+
+    public static Command[] Parse(string[] lines)
+    {
       var result = new Command[lines.Length];
 
       for (int i = 0; i < result.Length; i++)
         result[i] = Create(lines[i]);
-                    
+
       return result;
     }
-
 
     private static Command Create(string s)
     {
