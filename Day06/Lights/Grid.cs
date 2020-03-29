@@ -5,9 +5,9 @@ namespace Lights
 {
   public class Grid
   {
-    private int _r;
-    private int _c;
-    private Light[,] _lights;
+    private readonly int _r;
+    private readonly int _c;
+    private readonly Light[,] _lights;
 
     public Grid(int rows, int cols)
     {
@@ -18,13 +18,12 @@ namespace Lights
 
       for (int r = 0; r < _r; r++)
         for (int c = 0; c < _c; c++)
-          _lights[r, c] = new Light(new Point(r, c))
-          {
-            Status = Status.Off
-          };
+          _lights[r, c] = new Light(new Point(r, c));
     }
 
     public int LitCount { get => GetLitCount(); }
+
+    public int TotalBrightness { get => GetTotalBrightness(); }
 
     public void Execute(Command cmd)
     {
@@ -42,16 +41,24 @@ namespace Lights
           {
             case Instruction.On:
               temp.Status = Status.On;
+              temp.Brightness++;
               break;
+
             case Instruction.Off:
               temp.Status = Status.Off;
+              if (temp.Brightness > 0)
+                temp.Brightness--;
               break;
+
             case Instruction.Toggle:
+              temp.Brightness += 2;
+
               if (temp.Status == Status.Off)
                 temp.Status = Status.On;
               else
-                temp.Status = Status.Off;              
+                temp.Status = Status.Off;
               break;
+            
             case Instruction.Unknown:
             default:
               throw new Exception("Unknown instruction!");
@@ -69,6 +76,17 @@ namespace Lights
             count++;
 
       return count;
+    }
+    
+    private int GetTotalBrightness()
+    {
+      int brightness = 0;
+
+      for (int r = 0; r < _r; r++)
+        for (int c = 0; c < _c; c++)
+          brightness+= _lights[r,c].Brightness;
+
+      return brightness;
     }
   }
 }

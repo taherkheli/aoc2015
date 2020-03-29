@@ -14,7 +14,8 @@ namespace Lights
       foreach (var cmd in cmds)
         grid.Execute(cmd);
 
-      Console.WriteLine("\nPartI: Lit lights: {0}", grid.LitCount);      
+      Console.WriteLine("\nPartI: Lit lights: {0}", grid.LitCount);
+      Console.WriteLine("\nPartII: Total brightness: {0}", grid.TotalBrightness);
     }
   }
 }
