@@ -41,6 +41,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D08", "D08", "{AF184B09-32E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringParsing", "D08\StringParsing\StringParsing.csproj", "{681B992B-4971-4C9B-B62D-6364CBA9716F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StringParsingTest", "D08\StringParsingTest\StringParsingTest.csproj", "{7A2540F5-5717-4298-B06E-3C320B829319}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -91,6 +93,10 @@ Global
 		{681B992B-4971-4C9B-B62D-6364CBA9716F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{681B992B-4971-4C9B-B62D-6364CBA9716F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{681B992B-4971-4C9B-B62D-6364CBA9716F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A2540F5-5717-4298-B06E-3C320B829319}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A2540F5-5717-4298-B06E-3C320B829319}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A2540F5-5717-4298-B06E-3C320B829319}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A2540F5-5717-4298-B06E-3C320B829319}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +113,7 @@ Global
 		{E2EE36FD-6C06-42F9-9D39-922045B304F9} = {FB6BB4C2-51AE-42C4-9DEE-749A5765D4DC}
 		{A969DBC5-C64F-4586-BDC6-89509E45BD35} = {BB1EE142-FAE4-47EE-9196-D2DE9E97F813}
 		{681B992B-4971-4C9B-B62D-6364CBA9716F} = {AF184B09-32ED-4052-97BF-C00CD5CF0F91}
+		{7A2540F5-5717-4298-B06E-3C320B829319} = {AF184B09-32ED-4052-97BF-C00CD5CF0F91}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97D1F364-5633-4473-83A9-E2A005AB8A3D}
