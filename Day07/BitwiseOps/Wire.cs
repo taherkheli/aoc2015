@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace BitwiseLogic
+namespace BitwiseOps
 {
   public class Wire
   {
     private readonly string _id;
     private ushort _signal;
-    private List<Wire> _dependencies;
+    private readonly List<Wire> _dependencies;
 
     public Wire(string id)
     {
@@ -16,6 +16,6 @@ namespace BitwiseLogic
 
     public string Id => _id;
     public ushort Signal { get => _signal; set => _signal = value; }
-    public List<Wire> Dependencies { get => _dependencies; set => _dependencies = value; }
+    public List<Wire> Dependencies { get => _dependencies; }
   }
 }

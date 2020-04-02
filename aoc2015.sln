@@ -35,7 +35,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LightsTest", "Day06\LightsT
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D07", "D07", "{BB1EE142-FAE4-47EE-9196-D2DE9E97F813}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitwiseLogic", "Day07\BitwiseLogic\BitwiseLogic.csproj", "{C4786C9C-EBF4-4E42-BA0D-A2C81D5E2C50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitwiseOps", "Day07\BitwiseLogic\BitwiseOps.csproj", "{C4786C9C-EBF4-4E42-BA0D-A2C81D5E2C50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

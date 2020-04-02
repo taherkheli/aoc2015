@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace BitwiseLogic
+namespace BitwiseOps
 {
   public static class Utils
   {
@@ -41,7 +41,6 @@ namespace BitwiseLogic
       {
         case 1:
           int x;
-
           if (int.TryParse(s0[0], out x))
             result.ConstInput = (ushort)x;
           else
@@ -54,7 +53,12 @@ namespace BitwiseLogic
           break;
 
         case 3:
-          result.Input1 = GetWire(s0[0], wires);
+          int y;
+          if (int.TryParse(s0[0], out y))
+            result.ConstInput = (ushort)y;
+          else
+            result.Input1 = GetWire(s0[0], wires);
+          
           result.Op = GetOp(s0[1]);
 
           if ((result.Op == Ops.LSHIFT) || (result.Op == Ops.RSHIFT))
