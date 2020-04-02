@@ -54,9 +54,17 @@ namespace BitwiseOps
         inst.Execute(wires);
 
       var a = wires.Find(w => w.Id == "a");
-      Console.WriteLine("\nPartI: wire '{0}' carries a signal: '{1}'", a.Id, a.Signal);
-    }
+      Console.WriteLine("\nPartI:  Wire '{0}' carries a signal: '{1}'", a.Id, a.Signal);
+      
+      var inst_b = ordererdList.Find(i => i.Output.Id == "b");
+      inst_b.ConstInput = a.Signal;
+      
+      foreach (var inst in ordererdList)
+        inst.Execute(wires);
 
+      a = wires.Find(w => w.Id == "a");
+      Console.WriteLine("\nPartII: Wire '{0}' carries a signal: '{1}'", a.Id, a.Signal);
+    }
 
     private static bool IsALreadySolvable(Wire w, List<Instruction> list)
     {
