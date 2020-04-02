@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BitwiseOps
 {
@@ -45,23 +44,17 @@ namespace BitwiseOps
         if (ordererdList.Count == count)
           break;
       }
-
-
-      var arr = ordererdList.ToArray<Instruction>();
-
-
+      
       var wires = new List<Wire>();
-      for (int i = 0; i < arr.Length; i++)
-        wires.Add(new Wire(arr[i].Output.Id));
+
+      foreach (var item in ordererdList)
+        wires.Add(new Wire(item.Output.Id));   
 
       foreach (var inst in ordererdList)
         inst.Execute(wires);
 
-
-
-
-      var x = wires.Find(w => w.Id == "a");
-      Console.WriteLine("\nPartI: wire '{0}' carries a signal: '{1}'", x.Id, x.Signal);
+      var a = wires.Find(w => w.Id == "a");
+      Console.WriteLine("\nPartI: wire '{0}' carries a signal: '{1}'", a.Id, a.Signal);
     }
 
 
