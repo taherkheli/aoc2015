@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace StringParsing
@@ -74,6 +75,42 @@ namespace StringParsing
       }
 
       return count;
+    }
+
+    public static string Encode(string s)
+    {
+      var a = s.ToCharArray();
+      List<char> l = new List<char>(a);
+      
+      var indices = LocateOccurences(s);
+      
+      for (int i = 0; i < indices.Count; i++)
+      {
+        l.Insert(indices[i], '\\');
+
+        for (int j = i + 1; j < indices.Count; j++)
+          indices[j]++;
+      }               
+
+      //enclose in quotes
+      l.Insert(0, '\"');
+      l.Insert(l.Count - 1, '\"');
+
+      s = new string(l.ToArray());
+      return s;
+    }
+
+    //Locate occurences of '"' and '\' in a string
+    public static List<int> LocateOccurences(string s)
+    {
+      var result = new List<int>();
+      var a = s.ToCharArray();
+
+      for (int i = 0; i < a.Length; i++)
+        if ((a[i] == '\"') || (a[i] == '\\'))
+          result.Add(i);
+
+      return result;
     }
   }
 }
