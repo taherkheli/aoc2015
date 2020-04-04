@@ -19,15 +19,14 @@ namespace ShortestRouteTest
       };
       
       var world = new World(lines);
-      var distances = new List<int>();
       
       int expLondon = 605;
       int expDublin = 659;
       int expBelfast = 605;
 
-      int actLondon = world.Cities[0].ShortestRouteDistance(world);
-      int actDublin = world.Cities[1].ShortestRouteDistance(world); 
-      int actBelfast = world.Cities[2].ShortestRouteDistance(world); ;
+      int actLondon = world.Cities[0].ShortestAndLongestRouteDistance(world).Item1;
+      int actDublin = world.Cities[1].ShortestAndLongestRouteDistance(world).Item1; 
+      int actBelfast = world.Cities[2].ShortestAndLongestRouteDistance(world).Item1; ;
 
       Assert.AreEqual(expLondon, actLondon, "OK!");
       Assert.AreEqual(expDublin, actDublin, "OK!");

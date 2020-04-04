@@ -11,25 +11,23 @@ namespace ShortestRoute
       var lines = Utils.Parse(path);
       var world = new World(lines);
 
-      var distances = new List<int>();
+      int shortest = int.MaxValue;
+      int longest = int.MinValue;
 
       foreach (var city in world.Cities)
-        distances.Add(city.ShortestRouteDistance(world));
-           
-      Console.WriteLine("\nPartI: The distance of the shortest route is {0}", GetSmallest(distances));
-    }
-
-    private static int GetSmallest(List<int> list) 
-    {
-      int result = int.MaxValue;
-
-      foreach (var item in list)
       {
-        if (item < result)
-          result = item;
+        var d = city.ShortestAndLongestRouteDistance(world);
+
+        if (d.Item1 < shortest)
+          shortest = d.Item1;
+
+        if (d.Item2 > longest)
+          longest = d.Item2;
       }
 
-      return result;
+      Console.WriteLine("\nPartI:  The distance of the shortest route is {0}", shortest);
+
+      Console.WriteLine("\nPartII: The distance of the longest route is {0}", longest);
     }
   }
 }

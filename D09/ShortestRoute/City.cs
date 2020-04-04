@@ -1,4 +1,5 @@
 ﻿using Lib;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,9 +16,11 @@ namespace ShortestRoute
 
     public string Name => _name;
 
-    public int ShortestRouteDistance(World w)
+    public Tuple<int, int> ShortestAndLongestRouteDistance(World w)
     {
       int shortest = int.MaxValue;
+      int longest = int.MinValue;
+      Tuple<int, int> result; 
       
       var cities = new List<City>(w.Cities);
 
@@ -41,9 +44,13 @@ namespace ShortestRoute
 
         if (d < shortest)
           shortest = d;
+
+        if (d > longest)
+          longest = d;
       }
 
-      return shortest;
+      result = new Tuple<int, int>(shortest, longest);
+      return result;
     }
 
     private int GetDistance(List<City> route, World w)
