@@ -1,12 +1,11 @@
 ﻿using System;
 
-namespace SequenceBuilding
+namespace PasswordPolicy
 {
   class Program
   {
     static void Main()
     {
-      Console.WriteLine("Hello World!");
     }
   }
 }
