@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace MD5Hash
 {
@@ -6,6 +8,67 @@ namespace MD5Hash
   {
     static void Main()
     {
+      var input = "ckczppom";
+      int number = 0;      
+
+      while (true)
+      {
+        var temp = input + number.ToString();
+        temp = CalculateMD5Hash(temp);
+
+        if (ConditionMet(temp))
+          break;        
+        else
+          number++;
+      }
+
+      Console.WriteLine("\nPartI:  The  magic decimal number: {0}", number);
+      
+      input = "ckczppom";
+      number = 0;      
+      while (true)
+      {
+        var temp = input + number.ToString();
+        temp = CalculateMD5Hash(temp);
+
+        if (ConditionMetPartII(temp))
+          break;
+        else
+          number++;
+      }
+
+      Console.WriteLine("\nPartII: The  magic decimal number: {0}", number);
+    }
+
+    private static bool ConditionMet(string s)
+    {
+      if ((s[0] == '0') && (s[1] == '0') && (s[2] == '0') && (s[3] == '0') && (s[4] == '0'))
+        return true;
+      else
+        return false;
+    }
+
+    private static bool ConditionMetPartII(string s)
+    {
+      if ((s[0] == '0') && (s[1] == '0') && (s[2] == '0') && (s[3] == '0') && (s[4] == '0') && (s[5] == '0'))
+        return true;
+      else
+        return false;
+    }
+
+    private static string CalculateMD5Hash(string input)
+    {
+      // step 1, calculate MD5 hash from input
+      MD5 md5 = MD5.Create();
+      byte[] inputBytes = Encoding.ASCII.GetBytes(input);
+      byte[] hash = md5.ComputeHash(inputBytes);
+
+      // step 2, convert byte array to hex string
+      StringBuilder sb = new StringBuilder();
+      for (int i = 0; i < hash.Length; i++)
+        sb.Append(hash[i].ToString("X2"));
+      
+      return sb.ToString();
     }
   }
 }
