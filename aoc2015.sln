@@ -73,6 +73,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Happiness", "D13\Happiness\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappinessTest", "D13\HappinessTest\HappinessTest.csproj", "{05F03127-B114-443D-9CAC-4E41F3752A27}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "D14", "D14", "{80EC7A00-F6D4-485B-82A6-634FDC7A0A65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReindeerOlympics", "D14\ReindeerOlympics\ReindeerOlympics.csproj", "{DEB28819-9A3D-4CAD-9FA2-6221D110D687}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -163,6 +167,10 @@ Global
 		{05F03127-B114-443D-9CAC-4E41F3752A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05F03127-B114-443D-9CAC-4E41F3752A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05F03127-B114-443D-9CAC-4E41F3752A27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEB28819-9A3D-4CAD-9FA2-6221D110D687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEB28819-9A3D-4CAD-9FA2-6221D110D687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEB28819-9A3D-4CAD-9FA2-6221D110D687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEB28819-9A3D-4CAD-9FA2-6221D110D687}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +197,7 @@ Global
 		{D6D86247-6B67-4952-865E-BA2BBB466F5B} = {98BCCF07-23F6-4175-9495-AEDD5AEDB573}
 		{9563D66D-4126-49E9-8922-7AAA4E4817D1} = {5504BEC2-D94F-49CC-A37E-93737644B6DC}
 		{05F03127-B114-443D-9CAC-4E41F3752A27} = {5504BEC2-D94F-49CC-A37E-93737644B6DC}
+		{DEB28819-9A3D-4CAD-9FA2-6221D110D687} = {80EC7A00-F6D4-485B-82A6-634FDC7A0A65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97D1F364-5633-4473-83A9-E2A005AB8A3D}
