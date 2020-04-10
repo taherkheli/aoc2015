@@ -20,6 +20,15 @@ namespace Happiness
         numbers.Add(table.CalculateTotalChangeInHappiness(combination.ToList()));
       
       Console.WriteLine("\nPartI Maximum possible change in happiness is : {0}", numbers.Max());
+
+      numbers = new List<int>();
+      table.AddPerson(new Person("Bilal"));
+      combinations = table.Persons.Permute().ToList();
+
+      foreach (var combination in combinations)
+        numbers.Add(table.CalculateTotalChangeInHappiness(combination.ToList()));
+
+      Console.WriteLine("\nPartII Maximum possible change in happiness after seating myself is : {0}", numbers.Max());
     }
   }
 }

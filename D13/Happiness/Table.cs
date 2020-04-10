@@ -82,5 +82,25 @@ namespace Happiness
 
       return sum;
     }
+
+    public void AddPerson(Person person)
+    {
+      var temp = _persons.Find(p => p.Name == person.Name);
+
+      if (temp == null)
+      {
+        _persons.Add(person);
+        _happinessLookUp.Add(person.Name, new Dictionary<string, int>());
+
+        foreach (var p in _persons)
+        {
+          if (p.Name != person.Name)
+          {
+            _happinessLookUp[person.Name].Add(p.Name, 0);
+            _happinessLookUp[p.Name].Add(person.Name, 0);
+          }
+        }
+      }
+    }
   }
 }
