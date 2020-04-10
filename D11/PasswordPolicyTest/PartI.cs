@@ -10,7 +10,7 @@ namespace PasswordPolicyTest
     public void TC_01_Increment()
     {
       var s = "aaaaaaaa";
-      var expected = "aaaaealk";
+      var expected = "aaaaaelk";
 
       for (int i = 0; i < 3000; i++)
         s = Utils.Increment(s);
