@@ -25,16 +25,26 @@ namespace AuntSue
       };
 
       var auntId = -1;
-
       foreach (var aunt in aunts)
+      {
         if (aunt.MatcheDescription(dataToMatchAgainst))
         {
           auntId = aunt.Id;
           break;
         }
+      }
+      Console.WriteLine("\nPartI: The aunt Sue that fits the data is: {0}", auntId);
 
-      Console.WriteLine("\nPartI: The aunt Sue that fits the data is: {0}", auntId);     
-
+      auntId = -1;
+      foreach (var aunt in aunts)
+      {
+        if (aunt.MatcheDescriptionPartII(dataToMatchAgainst))
+        {
+          auntId = aunt.Id;
+          break;
+        }
+      }
+      Console.WriteLine("\nPartII: The aunt Sue that fits the data is: {0}", auntId);
     }
   }
 }

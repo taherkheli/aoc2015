@@ -27,5 +27,46 @@ namespace AuntSue
 
       return true;
     }
+
+    public bool MatcheDescriptionPartII(Dictionary<string, int> source)
+    {
+      foreach (KeyValuePair<string, int> entry in _data)
+      {
+        switch (entry.Key)
+        {
+          case "cats":
+          case "trees":
+            {
+              if (entry.Value <= source[entry.Key])
+                return false;
+
+              break;
+            }
+          case "pomeranians":
+          case "goldfish":
+            {
+              if (entry.Value >=source[entry.Key])
+                return false;
+
+              break;
+            }
+
+          case "children":
+          case "samoyeds":
+          case "akitas":
+          case "vizslas":
+          case "cars":
+          case "perfumes":
+            {
+              if (source[entry.Key] != entry.Value)
+                return false;
+
+              break;
+            }
+        }
+      }
+
+      return true;
+    }
   }
 }
