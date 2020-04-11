@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 
 namespace ReindeerOlympics
 {
@@ -18,10 +19,20 @@ namespace ReindeerOlympics
       return reindeers;
     }
 
+    public static void EvaluateAndScore(Reindeer[] reindeers)
+    {
+      var list = reindeers.OrderByDescending(r => r.CurrentDistance).ToList();
+      var distance = list[0].CurrentDistance;
+      var winners = list.FindAll(r => r.CurrentDistance == distance);
+
+      foreach (var r in winners)
+        r.Points++;
+    }
+
     private static Reindeer CreateReindeer(string line)
     {
       var s = line.Trim().Split(' ');
-      return (new Reindeer(s[0], int.Parse(s[3]), int.Parse(s[6]), int.Parse(s[13]))); 
+      return (new Reindeer(s[0], int.Parse(s[3]), int.Parse(s[6]), int.Parse(s[13])));
     }
   }
 }
