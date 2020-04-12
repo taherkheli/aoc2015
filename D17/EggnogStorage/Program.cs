@@ -25,10 +25,10 @@ namespace EggnogStorage
       finder.Find();
 
       Console.WriteLine("\nPartI: The possible number of valid container combos is: {0}", finder.ValidCombos.Count);
+      
+      var minContainers = finder.ValidCombos.OrderBy(l => l.Count).First().Count;
+      var numMinContainerCombos = finder.ValidCombos.Where(l => l.Count == minContainers).Count();
+      Console.WriteLine("\nPartII: The number of minimum needed container comboss is: {0}", numMinContainerCombos);
     }
-
-
-
-
   }
 }
