@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LightsAgain.Enum;
+using System;
 
 namespace LightsAgain
 {
@@ -6,19 +7,31 @@ namespace LightsAgain
   {
     static void Main()
     {
+      int steps = 100;  
       var path = "input.txt";
-      var grid = new Grid(Utils.Parse(path));
-
-      for (int i = 0; i < 100 ; i++)
-        grid.Increment();
+      var cfg = Utils.Parse(path);
+      var grid = new Grid(cfg);
+      for (int i = 0; i < steps; i++)
+        grid.GoToNextState();
 
       int sum = 0;
-
-      foreach (var light in grid.Lights)
-        if (light.Status == Enum.Status.On)
+      foreach (var light in grid.CurrState)
+        if (light.Status == Status.On)
           sum++;
- 
+
       Console.WriteLine("\nPartI: The number of lights in ON state after 100 steps: {0}", sum);
+      
+
+      grid = new Grid(cfg, true);
+      for (int i = 0; i < steps; i++)
+        grid.GoToNextState();
+
+      sum = 0;
+      foreach (var light in grid.CurrState)
+        if (light.Status == Status.On)
+          sum++;
+
+      Console.WriteLine("\nPartII: The number of lights in ON state after 100 steps: {0}", sum);
     }
   }
 }
