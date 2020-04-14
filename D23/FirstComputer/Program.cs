@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace FirstComputer
+﻿namespace FirstComputer
 {
   class Program
   {
@@ -8,11 +6,13 @@ namespace FirstComputer
     {
       var path = "input.txt";
       var program = Utils.Parse(path);
-
-      int x = 1;
-
-
-
+      var computer = new Computer(program);
+      computer.Execute();
+      System.Console.WriteLine("\nPartI: after execution register B has vale: {0}", computer.B);
+      
+      computer = new Computer(program, true);
+      computer.Execute();
+      System.Console.WriteLine("\nPartII: after execution register B has vale: {0}", computer.B);
     }
   }
 }
