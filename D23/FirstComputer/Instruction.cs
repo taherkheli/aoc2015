@@ -8,9 +8,9 @@ namespace FirstComputer
     private string _op1;
     private string _op2;
 
-    public Instruction(OpCode opCode, string op1 = null, string op2 = null)
+    public Instruction(OpCode opCode = OpCode.Unknown, string op1 = null, string op2 = null)
     {
-      _opCode = opCode;
+      _opCode = opCode;      
       _op1 = op1;
       _op2 = op2;
     }
