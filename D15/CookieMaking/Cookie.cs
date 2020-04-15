@@ -1,4 +1,6 @@
-﻿namespace CookieMaking
+﻿using System;
+
+namespace CookieMaking
 {
   public class Cookie
   {
@@ -14,8 +16,15 @@
 
     public int[] Cfg { get => _cfg; set => _cfg = value; }
 
-    public int Calculate()
+    public Tuple<int, bool> Calculate()
     {
+      Tuple<int, bool> result; 
+      var sellable = false;
+
+      int calorieCount = _cfg[0] * _ingredients[0].Calories + _cfg[1] * _ingredients[1].Calories + _cfg[2] * _ingredients[2].Calories + _cfg[3] * _ingredients[3].Calories;
+      if (calorieCount == 500)
+        sellable = true; ;
+
       int capacity = _cfg[0] * _ingredients[0].Capacity + _cfg[1] * _ingredients[1].Capacity + _cfg[2] * _ingredients[2].Capacity + _cfg[3] * _ingredients[3].Capacity;
       if (capacity < 0)
         capacity = 0;
@@ -32,7 +41,9 @@
       if (texture < 0)
         texture = 0;
 
-      return capacity * durability * flavor * texture;
+      result = new Tuple<int, bool>(capacity * durability * flavor * texture, sellable);
+
+      return result;
     }
   }
 }
