@@ -20,7 +20,7 @@ namespace aoc.test
 		[Fact]
 		public void PartII()
 		{
-			var expected = 2;
+			var expected = 1771;
 			var actual = Helper.IndexAtEnteringBasement(input);
 
 			Assert.Equal(expected, actual);
