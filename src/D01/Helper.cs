@@ -1,19 +1,10 @@
 ﻿using System;
-using System.IO;
 
-namespace Day01
+namespace aoc.D01
 {
-  class Program
-  {
-    static void Main()
-    {
-      string path = "input.txt";
-      Console.WriteLine("\nPart I:  Instructions took Santa to floor: {0}", GetFloor(LoadInput(path)));
-
-      Console.WriteLine("\nPart II:  Position of the chracter that made Santa enter the floor: {0}", IndexAtEnteringBasement(LoadInput(path)));
-    }
-
-    private static int GetFloor(string input)    
+	public static class Helper
+	{
+    public static int GetFloor(string input)
     {
       int floor = 0;
       var directions = input.ToCharArray();
@@ -22,7 +13,7 @@ namespace Day01
       {
         if ((dir != '(') && (dir != ')'))
           throw new ArgumentException("Bad input. only ( or ) is valid!");
-        
+
         if (dir == '(')
           floor += 1;
         else
@@ -32,7 +23,7 @@ namespace Day01
       return floor;
     }
 
-    private static int IndexAtEnteringBasement(string input)
+    public static int IndexAtEnteringBasement(string input)
     {
       int result = 0;
       int floor = 0;
@@ -43,7 +34,7 @@ namespace Day01
           throw new ArgumentException("Bad input. only ( or ) is valid!");
 
         if (input[i] == '(')
-          floor += 1;        
+          floor += 1;
         else
         {
           floor -= 1;
@@ -53,15 +44,10 @@ namespace Day01
             result = i + 1;
             break;
           }
-        } 
+        }
       }
 
       return result;
-    }
-
-    private static string LoadInput(string path)
-    {
-      return new StreamReader(path).ReadToEnd();
     }
   }
 }
