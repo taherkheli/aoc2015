@@ -1,4 +1,4 @@
-name: .NET
+name: aoc2015
 
 on:
   push:
