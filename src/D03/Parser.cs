@@ -1,10 +1,9 @@
-﻿using HousesOnGrid.Enum;
-using System;
+﻿using System;
 using System.IO;
 
-namespace HousesOnGrid
+namespace aoc.D03
 {
-  public static class Parser
+	public static class Parser
   {
     public static Dir[] Parse(string path)
     {
