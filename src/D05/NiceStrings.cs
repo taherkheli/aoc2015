@@ -1,18 +1,56 @@
-﻿using System;
-using System.IO;
-
-namespace NiceStrings
+﻿namespace aoc.D05
 {
-  public static class Utils
+  public class NiceStrings
   {
-    internal static string[] Parse(string path)
+    int _niceCount;
+    string[] _strings;
+
+    public NiceStrings(string[] strings)
     {
-      StreamReader file = new StreamReader(path);
-      var text = file.ReadToEnd().Trim(Environment.NewLine.ToCharArray());
-      return text.Split(Environment.NewLine);
+      _niceCount = 0;
+      _strings = strings;
     }
 
-    internal static bool HasDisallowedChars(string s)
+    public int PartI()
+    {
+      _niceCount = 0;
+
+      foreach (var s in _strings)
+      {
+        if (HasDisallowedChars(s))
+          continue;
+
+        if (!HasThreeVowels(s))
+          continue;
+
+        if (!HasOneDouble(s))
+          continue;
+
+        _niceCount++;
+      }
+
+      return _niceCount;
+    }
+
+    public int PartII()
+    {
+      _niceCount = 0;
+
+      foreach (var s in _strings)
+      {
+        if (!HasSeparatedDouble(s))
+          continue;
+
+        if (!HasTwoNonOverlappingPairs(s))
+          continue;
+
+        _niceCount++;
+      }
+
+      return _niceCount;
+    }
+
+    private bool HasDisallowedChars(string s)
     {
       bool found = false;
 
@@ -25,12 +63,12 @@ namespace NiceStrings
           found = true;
           break;
         }
-      }      
-      
+      }
+
       return found;
     }
 
-    internal static bool HasThreeVowels(string s)
+    private bool HasThreeVowels(string s)
     {
       bool found = false;
       var charArr = s.ToCharArray();
@@ -54,14 +92,14 @@ namespace NiceStrings
       return found;
     }
 
-    internal static bool HasOneDouble(string s)
+    private bool HasOneDouble(string s)
     {
       bool found = false;
       var charArr = s.ToCharArray();
 
       for (int i = 0; i < charArr.Length - 1; i++)
       {
-        if (charArr[i] == charArr[i + 1]) 
+        if (charArr[i] == charArr[i + 1])
         {
           found = true;
           break;
@@ -70,8 +108,8 @@ namespace NiceStrings
 
       return found;
     }
-    
-    public static bool HasTwoNonOverlappingPairs(string s)
+
+    private bool HasTwoNonOverlappingPairs(string s)
     {
       bool found = false;
       var charArr = s.ToCharArray();
@@ -82,9 +120,9 @@ namespace NiceStrings
         count = 1;
 
         for (int j = i + 2; j < charArr.Length - 1; j++)
-        {       
+        {
           if ((charArr[i] == charArr[j]) && (charArr[i + 1] == charArr[j + 1]))
-            count++;          
+            count++;
         }
 
         if (count > 1)
@@ -97,7 +135,7 @@ namespace NiceStrings
       return found;
     }
 
-    public static bool HasSeparatedDouble(string s)
+    private bool HasSeparatedDouble(string s)
     {
       bool found = false;
       var charArr = s.ToCharArray();
@@ -113,5 +151,6 @@ namespace NiceStrings
 
       return found;
     }
+
   }
 }
