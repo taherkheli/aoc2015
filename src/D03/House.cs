@@ -1,6 +1,6 @@
-﻿namespace HousesOnGrid
+﻿namespace aoc.D03
 {
-  public class House
+	public class House
   {
     private readonly int _x;
     private readonly int _y;
@@ -16,6 +16,6 @@
     public int X { get => _x; }
     public int Y { get => _y; }
 
-    public int VisitCount { get => _visitCount; set => _visitCount = value;  }
+    public int VisitCount { get => _visitCount; set => _visitCount = value; }
   }
 }
