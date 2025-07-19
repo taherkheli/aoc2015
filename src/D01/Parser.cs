@@ -1,4 +1,4 @@
-﻿namespace aoc.Common
+﻿namespace aoc.D01
 {
   public static class Parser
   {

@@ -1,5 +1,4 @@
-﻿using aoc.Common;
-using aoc.D01;
+﻿using aoc.D01;
 
 namespace aoc.test.D01
 {
