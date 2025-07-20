@@ -5,17 +5,16 @@
 		public static Box[] Parse(string path)
 		{
 			Box[] result;
-			StreamReader file = new StreamReader(path);
-			string[] strings = file.ReadToEnd().Split(Environment.NewLine);
+      var strings = File.ReadAllLines(path);
 			result = new Box[strings.Length];
 
 			for (int i = 0; i < result.Length; i++)
-				result[i] = Create(strings[i]);
+				result[i] = GetBox(strings[i]);
 
 			return result;
 		}
 
-		private static Box Create(string s)
+		private static Box GetBox(string s)
 		{
 			var strings = s.Split('x');
 
@@ -26,4 +25,3 @@
 		}
 	}
 }
-
