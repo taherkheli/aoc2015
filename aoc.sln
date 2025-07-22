@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{B244A6CB-9885-4DB2-825E-30B076B12B83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aoc.test", "test\aoc.test\aoc.test.csproj", "{4D2E6176-C2EE-4C86-AB6C-D20227E7F4DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "aoc.test", "test\aoc.test.csproj", "{AC5F4839-6B50-41FC-30C3-FBC48E767AD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,17 +21,17 @@ Global
 		{41462B2D-1E50-E8DB-F14E-53712CEFD9EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41462B2D-1E50-E8DB-F14E-53712CEFD9EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41462B2D-1E50-E8DB-F14E-53712CEFD9EC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4D2E6176-C2EE-4C86-AB6C-D20227E7F4DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4D2E6176-C2EE-4C86-AB6C-D20227E7F4DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4D2E6176-C2EE-4C86-AB6C-D20227E7F4DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4D2E6176-C2EE-4C86-AB6C-D20227E7F4DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5F4839-6B50-41FC-30C3-FBC48E767AD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5F4839-6B50-41FC-30C3-FBC48E767AD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5F4839-6B50-41FC-30C3-FBC48E767AD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5F4839-6B50-41FC-30C3-FBC48E767AD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{41462B2D-1E50-E8DB-F14E-53712CEFD9EC} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{4D2E6176-C2EE-4C86-AB6C-D20227E7F4DF} = {B244A6CB-9885-4DB2-825E-30B076B12B83}
+		{AC5F4839-6B50-41FC-30C3-FBC48E767AD0} = {B244A6CB-9885-4DB2-825E-30B076B12B83}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3BF40C5A-B13C-445B-B668-F26A471FD3CE}
