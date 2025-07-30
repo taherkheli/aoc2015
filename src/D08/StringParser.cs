@@ -27,10 +27,7 @@
         sumC += z;
       }
 
-      if (isPartII)
-        return sumC - sumA;
-      else 
-        return sumA - sumB;
+      return isPartII ? sumC - sumA : sumA - sumB;
     }
 
     private int GetInMemoryCharCount(string s)

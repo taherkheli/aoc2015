@@ -9,7 +9,7 @@ namespace aoc.test.D08
     [InlineData(2085, "input.txt", true)]
     public void D08test(long expected, string input, bool isPartII)
     {
-      var parser = new StringParser(File.ReadLines("./D08/" + input).ToArray());
+      var parser = new StringParser([.. File.ReadLines("./D08/" + input)]);
       var actual = parser.Solve(isPartII);
       Assert.Equal(expected, actual);
     }
