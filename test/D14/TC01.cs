@@ -4,7 +4,7 @@ namespace aoc.test.D14
 {
   public class TC01
   {
-    Race race = new Race((Parser.Parse("./D14/input.txt")));
+    readonly Race race = new ((Parser.Parse("./D14/input.txt")));
 
     [Theory]
     [InlineData(2640, 2503)]
