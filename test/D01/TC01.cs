@@ -4,21 +4,14 @@ namespace aoc.test.D01
 {
   public class TC01
   {
-    string input = Parser.Parse("./D01/input.txt");
+    readonly string input = Parser.Parse("./D01/input.txt");
 
-    [Fact]
-    public void PartI()
+    [Theory]
+    [InlineData(138, false)]
+    [InlineData(1771, true)]
+    public void D01test(int expected, bool isPartII)
     {
-      var expected = 138;
-      var actual = Building.Solve(input);
-      Assert.Equal(expected, actual);
-    }
-
-    [Fact]
-    public void PartII()
-    {
-      var expected = 1771;
-      var actual = Building.Solve(input, true);
+      var actual = Building.Solve(input, isPartII);
       Assert.Equal(expected, actual);
     }
   }
